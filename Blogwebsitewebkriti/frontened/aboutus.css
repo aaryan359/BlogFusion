@@ -1,0 +1,159 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    /* background-color: #f8f7f6; */
+}
+
+
+.div1{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+ 
+}
+
+.p1{
+    width: 1100px;
+    font-size:40px;
+    font-weight: bolder; 
+    text-align: center;
+}
+
+#future{
+    background: linear-gradient(356deg, rgba(89, 192, 219, 1) 0%, rgba(24, 143, 209, 1) 18%, rgb(10, 58, 54)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.p2{
+   
+    width: 850px;
+    height: 45px;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+
+}
+#aa{
+    background: linear-gradient(356deg, rgba(89, 192, 219, 1) 0%, rgba(24, 143, 209, 1) 18%, rgb(10, 58, 54)100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.images{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-size: cover; 
+    background-position: center;
+    width: 80%;
+ 
+  
+}
+
+.img{
+    width: 33%;
+    height: 40%;
+    margin: 10px;
+    border-radius: 10px;
+}
+.div2 {
+  background-color: #141A28;
+  width: 100%;
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+
+.p3{
+    font-size: 35px;
+    width: 1250px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+
+
+.abc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.div3{
+    background-color: #F5F7F9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ 
+}
+
+
+.data{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20%;
+    margin: 50px;
+
+}
+
+
+.heading1{
+    font-size: xx-large;
+    font-weight: bold;
+    color: orangered;
+}
+
+
+
+.heading2{
+    font-size: xx-large;
+    font-weight: bold;
+    color: purple;
+}
+
+/* @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); */
+.text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: larger;
+    word-spacing: 2px;
+    line-height: 23px;
+    font-weight: bold;
+    color: #141A28;
+
+}
+
+
+.div4{
+    background-color: #53AA51;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+}
+
+
+.upper{
+    font-size: medium;
+    font-weight: bolder;
+}

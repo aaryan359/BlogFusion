@@ -1,0 +1,279 @@
+
+
+/* header css */
+.aa-header{
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+
+}
+
+.userprofile-header{
+background-color: aquamarine;
+display: flex;
+flex-direction: column;
+justify-content: center;
+flex-wrap: wrap;
+font-family: Arial, sans-serif;
+background: #141A28;
+color: #fff;
+width: 25%;
+align-items: center;
+border-radius: 10px;
+}
+.user-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.userprofile-header img{
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    padding: 10px;
+    
+}
+
+/* icons css */
+.icons {
+    display: flex;
+    flex-wrap:wrap;
+    margin: 20px;
+    gap: 30px;
+    cursor: pointer;
+  }
+
+  .icons i {
+    color: #afb6c7;
+  }
+ .icons i:hover  {
+    color: #fff;
+  }
+
+
+/* edit button css */
+.edit_profile {
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; 
+    border: 2px solid #007bff; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; 
+    margin-bottom: 5px;
+}
+.edit_profile:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+}
+.edit_profile:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+
+/* main blog preview css */
+.userprofile-main{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-top: 20px;
+    position: relative;
+}
+
+.all-blogs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.user-blog{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2px;
+    margin: 30px;
+    gap: 10px;
+    box-shadow: 0 2px 5px rgba(227, 14, 96, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.aa-title 
+{
+    margin-left: 15px;
+    font-size: 20px;
+    width: 370px;
+    color: #141A28;
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+.aa-title:hover{
+
+color:#0073ff;
+
+}
+
+
+.user-blog:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(39, 14, 227, 0.3); 
+}
+
+.aa-img{
+width: 380px;
+height: 280px;
+cursor: pointer;
+border-radius: 10px;
+box-shadow: 0 2px 5px rgba(227, 14, 96, 0.1);
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.user-blog img:hover {
+   
+    box-shadow: 0 4px 10px rgba(39, 14, 227, 0.3); 
+} 
+.aa-like-comment{
+    display: flex;
+    flex-wrap:wrap;
+    margin: 20px;
+    justify-content:space-between;
+    gap: 30px;
+    cursor: pointer;
+    width: 370px;
+}
+.aa-like-comment i {
+    color: #141A28;
+  }
+
+.aa-like-comment i:hover  {
+    color: green;
+    transform: scale(1.1);
+  }
+
+  /* edit and delete button css */
+
+.delete{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; 
+    border: 2px solid #007bff; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; 
+    margin: 10px;
+}
+.delete:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+}
+.delete:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+.edit{
+    display: inline-block;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; 
+    border: 2px solid #007bff; 
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer; 
+    margin: 10px;
+}
+.edit:hover {
+    background-color: #0056b3; 
+    border-color: #0056b3;
+}
+.edit:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
+
+
+
+
+
+/* edit button css */
+.form-div{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+  }
+
+.aa-edit_profile {
+    position: absolute;
+    left: 40%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(39, 14, 227, 0.3); 
+    width: 300px;
+  }
+  
+  .edit-profile-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .div-username,
+  .div-bio {
+    margin-bottom: 15px;
+  }
+  
+  .aa-username,
+  .aa-bio {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  .aa-edit-username,
+  .aa-edit-bio {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+
+  .aa-submit {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    width: 25%;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .aa-submit:hover {
+    background-color: #45a049;
+  }

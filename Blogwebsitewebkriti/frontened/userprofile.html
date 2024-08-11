@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogFusion</title>
+     <link href="userprofile.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+</head>
+<body>
+
+    <header class=" header-part">
+        <div class="header-logo">
+            <img class="logo-image" src="bloglogo.png" alt="Logo">
+            <p class="blogwebsitname">BlogFusion</p>
+        </div>
+
+        <nav class="header-navbar">
+
+          <div>
+            <a class="navbar-parts1" href="index.html">Home</a>
+          </div>
+           
+           <div>
+            <a class="navbar-parts2" href="aboutus.html">About</a>
+
+           </div>
+            
+            <div>
+                <a  class="navbar-parts3" href="#">Blogs</a>
+            </div>
+            
+             <div>
+                <a class="navbar-parts4" href="quill.html">Publish blog</a>
+             </div>
+        </nav>
+        <div class="auth-buttons">
+                     
+                   <div class="search-section">
+                          <div class="searchbox-div"> 
+                                    <input id="searchbox" type="search"></input>
+                          </div>
+                    <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+
+                   </div>
+
+
+                <div class="login-signup-button">  
+
+                    <button id="loginbutton" class="loginbutton">Login</button>
+                    <button id="signupbutton" class="signupbutton">Sign up</button>
+
+                </div>
+             
+                 <div class="profile-section" >
+
+                          <button class="drop-down">
+
+                          <img  class="profile-image" alt="profileimage">
+                          <div>
+                            <i id="drop-down-icon" class="fa-solid fa-caret-down"></i>
+                          </div> 
+
+                          <div class="dashboard-logout">
+                                                      <a class="dashboard-button" >
+                                                        <i class="fa-solid fa-gauge"></i>
+                                                        Dashboard</a>
+                                                       <div class="logout-button">
+                                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                                        Logout</div>
+                           </div>
+
+                                        
+
+                        </button>
+                                
+                                                  
+                                              
+                                 
+                           
+                 </div>
+
+                    
+        </div>
+
+    </header>
+
+
+    <div class="main-auth-section">
+        <div class="main-body">
+             <div class="main-auth" >
+            
+
+                <div  id="login" style="width: 100%; flex-direction: column; justify-content: center; align-items: center;">
+
+                  <div id="hide-login-signup" >
+                            
+                    <i id="hide-login-icon" style=" cursor: pointer;  font-size: 30px; font-weight: bolder; color: red;" class="fa-solid fa-xmark"></i>
+                              
+
+                  </div>
+                       <div class="header-logo2">
+                              <img class="logo-image2" src="bloglogo.png" alt="Logo">
+                              <p class="blogwebsitname2">BlogFusion</p>
+                       </div>
+   
+                      <div class="login-div-one">Welcome back to Bloggr</div> 
+
+       
+
+                     <div class="login-div-two">
+                                     <form class=" login-form">
+                                
+                                     <div class="login-form-div-one">
+                                                <label class="form-label-one" for="email" >Email</label>
+                                                <input class="loginemail" type="text" id="email" name="email" placeholder="Enter your email" required  >
+                                     </div>
+
+                                     <div class="login-form-div-two"> 
+                                                <label  class="form-label-two" for="password" >Password</label>
+                                                <input class="loginpassword" type="text" id="password" name="password" placeholder="Enter your password" required  >
+                                     </div>
+                                      <div class="login-form-div-three">
+                                                <button type="button" class="forgot-button">Forget_password?</button>
+                                                <button type="submit" id="signupbutton2" class="forgot-button">Sign up</button>
+                                                
+                                      </div>
+
+                                      <button  class="login-form-button" type="submit">Sign In</button>
+                                   
+                                      </form>
+
+
+
+                       
+                        </div>
+
+                </div>
+       
+   
+          
+                <div id="signup" style="width: 100%; flex-direction: column; justify-content: center; align-items: center;" >
+
+     
+
+         <!-- <div class="header-logo2">
+             <img class="logo-image2" src="bloglogo.png" alt="Logo">
+             <p class="blogwebsitname2">BlogFusion</p>
+         </div> -->
+             <div id="hide-login-signup" >
+                            
+              <i id="hide-signup-icon" style=" cursor: pointer; font-size: 30px; font-weight: bold; color: red;" class="fa-solid fa-xmark"></i>
+                        
+
+             </div>
+           <div class="signup-div-one">Be a Voice in Our Blogging Community: Register Now!</div> 
+
+      
+
+           <div class="signup-div-two">
+                          <form class="signup-form">   
+
+                                          <div class="signup-firstname-lastname">
+
+                                             <div class="signup-form-firstname">
+                                                 <label class="form-label-one"  for="firstname" >Firstname</label>
+                                                 <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required  >
+                                             </div>
+
+                                              <div class="signup-form-lastname"> 
+                                                 <label id="signuplastname" class="form-label-two" for="lastname" >Lastname</label>
+                                                 <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname" required  >
+                                               </div>
+                                          </div>
+
+                                          <div class="signup-form-div-two">
+                                             <label class="form-label-one" for="email" >Email</label>
+                                             <input class="signupemail" type="text" id="email" name="email" placeholder="Enter your email" required  >
+                                         </div>
+
+                                         <div class="signup-form-div-three">
+                                             <label class="form-label-one" for="mobilenumber" >Mobile number</label>
+                                             <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Enter your mobile number" required  >
+                                         </div>
+
+                                         <div class="signup-password-confirm">
+                                             <div class="signup-form-password">
+                                                 <label class="form-label-one" for="signpassword" >Password</label>
+                                                 <input type="text" id="signpassword" name="password" placeholder="Enter password" required >
+                                             </div>
+
+                                             <div class="signup-form-confirm">
+                                                 <label id="signupconfirmpassword" class="form-label-one" for="confirmpassword" > Confirm password</label>
+                                                 <input type="text" id="confirmpassword" name="confirmpassword" placeholder="Enter confirm password" required  >
+                                             </div>
+                                         </div>
+
+
+                                           
+
+                                      
+                                       
+                                         <div class="signup-form-div-login" style=" display: flex; flex-direction: row; justify-content: end;">
+                                       
+                                          <button type="button" id="loginbutton2" class="forgot-button">Login</button>
+                                          
+                                         </div>
+                                        <button   class="signup-form-button" type="submit">Create Account</button>
+                                     
+                          </form>
+
+
+
+                         
+           </div>
+
+
+                </div>
+
+
+                <div class="otp-container" id="otp-container">
+
+                  <div id="hide-verify-email" >
+                            
+                    <i id="hide-email-icon" style=" cursor: pointer; font-size: 30px; font-weight: bold; color: red;" class="fa-solid fa-xmark"></i>
+                              
+
+                   </div>
+                    <div class="verify-email-div">  Verify email </div>
+
+                    <div  class="verify-email-title"> Enter the 6-digit verification code that was sent to your email.
+
+                    </div>
+                  
+
+                  <div class="inputfield">
+                    <input type="number" maxlength="1" class="input" disabled />
+                    <input type="number" maxlength="1" class="input" disabled />
+                    <input type="number" maxlength="1" class="input" disabled />
+                    <input type="number" maxlength="1" class="input" disabled />
+                    <input type="number" maxlength="1" class="input" disabled />
+                    <input type="number" maxlength="1" class="input" disabled />
+                   
+                  </div>
+                          <div style="width: 100%;">
+                                  <button   class="verify-email-button">Verify email</button>
+                          </div>
+                </div>
+
+              </div>
+
+       </div>   
+
+     </div>
+
+
+
+    <div class="aa-userprofile-section">
+
+        <div class="aa-header">
+
+          <div class="userprofile-header"> 
+    
+            <img class="aa-profile-img" src="profile.avif" alt="">
+
+            <div class="user-details">
+
+                <!-- <h3 class="user_name"></h3> -->
+                <h4 class="user_username">aaryan_234</h4>
+                <p class="user_bio"> i am thrilled to anounced to new webKriti project Blognfusion </p>
+                <button class="edit_profile"> edit profile</button>
+
+                <div class="icons">
+                    <i style="font-size:25px;" class="fa-brands fa-facebook-f"></i>
+                    <i style="font-size:25px;" class="fa-brands fa-twitter"></i>
+                    <i style="font-size:25px;"  class="fa-brands fa-linkedin"></i>
+                    <i style="font-size:25px;"  class="fa-brands fa-github"></i>
+                  </div>
+            </div>
+
+         </div> 
+        </div>
+        
+
+        <div class="userprofile-main">
+
+
+        <div class="form-div">
+
+          <div class="aa-edit_profile" >
+
+            <form class=" edit-profile-form">
+              
+              <div class="div-username">
+                <label class="aa-username" for="username">username</label>
+                <input class="aa-edit-username" type="text" placeholder="user name" required>
+              </div>
+
+              <div class="div-bio">
+                <label class="aa-bio" for="bio">bio</label>
+                <input class="aa-edit-bio" type="text" placeholder="bio" required>
+              </div>
+              <button class="aa-submit" type="submit">submit</button>
+
+            </form>
+
+          </div>
+        </div>
+
+               <h3 style="text-align: center; font-size: 40px;"> All Blogs </h3>
+                   
+                <div class="all-blogs">
+                    <!-- <div class="user-blog">
+                         <img  class="aa-img" src="img2.jpg" alt="">
+                        <a class="aa-title"> sumary : top 10 bikes </a>
+
+                        <div class="aa-like-comment">
+
+                            <p class="aa-like-p">
+                              <i style="font-size:20px;" class="fa-solid fa-thumbs-up"></i>
+                              <span class="aa-like">Like</span>
+                            </p>
+
+                            <p class="aa-comment-p">
+
+                                <i  style="font-size:20px;" class="fa-solid fa-comment"></i>
+                                <span id="aa-comment">Comment</span>
+                              </p>
+                                     
+                        </div>
+
+                        <div class="aa-update-post">
+                            <button class="delete"> delete</button>
+                            <button class="edit"> edit post</button>
+
+                        </div>
+                    </div> 
+           
+                </div> -->
+                 
+        </div>
+    </div>
+
+
+
+     <div class="home-footer">
+        <div class="footer">
+
+  <div class="footer-row">
+
+    <div class="footer-col">
+      <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Info</h4>
+      <ul class="links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Compressions</a></li>
+        <li><a href="#">Customers</a></li>
+        <li><a href="#">Service</a></li>
+        <li><a href="#">Collection</a></li>
+        <li><a href="#">pricing</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Explore</h4>
+      <ul class="links">
+        <li><a href="#">Free Designs</a></li>
+        <li><a href="#">Latest Designs</a></li>
+        <li><a href="#">Themes</a></li>
+        <li><a href="#">Popular Designs</a></li>
+        <li><a href="#">Art Skills</a></li>
+        <li><a href="#">New Uploads</a></li>
+        <li><a href="#">old uploads</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Legal</h4>
+      <ul class="links">
+        <li><a href="#">Customer Agreement</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">GDPR</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Media Kit</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;"> contact us</h4>
+      <p>
+        welcome to BlogFusion,
+        your number 1 source blogging 
+        with an emphasis on quality, reliability, and uniqueness
+
+      </p>
+      <p>
+        <i class="fa-solid fa-map-marker-alt"></i> Morena link Road ,Gwalior ,Madhya Pradesh
+        
+      </p>
+      
+      
+      <div>
+        <input class="mail" type="text" placeholder="Your email" required>
+        <input class="problem" type="text" placeholder="write your problem" required>
+        <button class="btn" type="submit">SEND</button>
+      </div>
+     
+      <div class="icons">
+        <i style="font-size:25px;" class="fa-brands fa-facebook-f"></i>
+        <i  style="font-size:25px;" class="fa-brands fa-twitter"></i>
+        <i style="font-size:25px;"  class="fa-brands fa-linkedin"></i>
+        <i style="font-size:25px;"  class="fa-brands fa-github"></i>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; BlogFusion.com | Designed by aaryan meena,vikas pal,anurag singh
+</div>
+        </div>
+</div>  
+
+
+</body>
+
+<script src="useimage.js">
+              
+</script>
+
+
+<script src="searchbar.js">            
+  
+</script>
+
+<script src="dropdown.js">
+              
+
+</script>
+
+<script src="authloginsignup.js">
+ 
+           
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://kit.fontawesome.com/cb02f431d6.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+
+
+//icon script
+<script src="https://kit.fontawesome.com/cb02f431d6.js" crossorigin="anonymous"></script>
+<script>
+
+const edit_profile = document.querySelector('.edit_profile');
+
+
+
+// Get the current URL
+const url = new URL(window.location.href);
+
+const userId = url.searchParams.get('userId');
+
+console.log(userId); 
+
+let dbUserDetails = userdetails._id;
+console.log(dbUserDetails);
+
+
+let allPostByUser;
+const GETALLPOSTBYUSER_API = BASE_URL+'/blog/allpost'
+
+async function getAllPostByUser(userId){
+  authloading = true;
+  showloadingtoast(authloading);
+
+  try {
+   const response = await apiconnector("POST",GETALLPOSTBYUSER_API,{userId});
+
+   console.log("userAllPost API response ..........",response);
+
+    if(!response){
+         throw new Error(response.data.message);
+    }
+
+    allPostByUser = response.data.userAllPost;
+
+    console.log(allPostByUser)
+      toastr.success('all blog aa gye hai ','succes');
+
+    
+  } catch (error) {
+    console.log(error)
+    toastr.error(" all post by userId nhi aayi hai",'Error');
+  }
+
+  authloading = false;
+  showloadingtoast(authloading);
+
+
+}
+
+const DELETEPOST_API = BASE_URL+'/blog/deletepost'
+
+async function deletepost(postId){
+  authloading = true;
+  showloadingtoast(authloading);
+   try {
+   const response = await apiconnector("POST",DELETEPOST_API,{postId});
+   console.log("userAllPost API response ..........",response);
+
+    if(!response){
+     throw new Error(response.data.message);
+      }
+    
+   } catch (error) {
+    console.log("post delete nhi ho rhi  hai",error);
+     toastr.error(" delete nhi hui");
+   }
+
+   authloading = false;
+   showloadingtoast(authloading);
+}
+
+
+async function handleallPostByUser(){
+
+     await getAllPostByUser(userId);
+     
+     allPostByUser.map((post,index)=>{
+ 
+       console.log('each post data ',post);
+
+       //all blog div to show all blog
+        const allblogs = document.querySelector('.all-blogs');
+       
+
+            const mainDiv = document.createElement('div');
+            mainDiv.classList.add('user-blog');
+            
+
+            const imgElement = document.createElement('img');
+            imgElement.classList.add('aa-img');
+            imgElement.src = post.images[0];
+            mainDiv.appendChild(imgElement);
+
+            const tittle  = document.createElement('a');
+            tittle.classList.add('aa-title');
+            tittle.innerText = post.title;
+            tittle.href = `previewblog.html?postid=${post._id}`
+            mainDiv.appendChild(tittle);
+
+          const LikeMainDiv = document.createElement('div');
+          LikeMainDiv.classList.add('aa-like-comment')
+          mainDiv.appendChild(LikeMainDiv);
+
+
+              const ptaglike = document.createElement('p');
+              ptaglike.classList.add('aa-like-p')
+              LikeMainDiv.appendChild(ptaglike);
+                 
+                  const like = document.createElement('i');
+                  like.classList.add('fa-solid' ,'fa-thumbs-up')
+                  like.style.fontSize = '30px';
+                  ptaglike.appendChild(like);
+
+
+                  const likespan = document.createElement('span');
+                  like.classList.add('aa-like')
+                  
+                  ptaglike.appendChild(likespan);
+              
+              
+              const ptagcomment = document.createElement('p');
+              ptagcomment.classList.add('aa-comment-p')
+              LikeMainDiv.appendChild(ptagcomment);
+                 
+                  const Comment = document.createElement('i');
+                  Comment.classList.add('fa-solid' ,'fa-comment')
+                  Comment.style.fontSize = '30px';
+                  ptagcomment.appendChild(Comment);
+
+                  const Commentspan = document.createElement('span');
+                  Comment.classList.add('aa-commment')
+                  ptagcomment.appendChild(Commentspan);
+
+
+          const buttonDiv = document.createElement('div');
+          buttonDiv.classList.add('aa-update-post');
+          mainDiv.appendChild(buttonDiv)
+
+            const deleteBlog = document.createElement('button');
+            deleteBlog.classList.add('delete')
+            deleteBlog.innerText = 'delete'
+            buttonDiv.appendChild(deleteBlog)
+
+            const editBlog = document.createElement('button');
+            editBlog.classList.add('edit')
+            editBlog.innerText = 'edit'
+            buttonDiv.appendChild(editBlog)
+
+            allblogs.appendChild(mainDiv);
+
+
+              if(userId !== dbUserDetails ) {
+                   edit_profile.style.display  = 'none'
+                   buttonDiv.style.display = 'none'
+           }
+
+           deleteBlog.addEventListener('click',()=>{
+                            deletepost(post._id);
+                            location.reload(); 
+           })
+
+           editBlog.addEventListener('click',()=>{
+             const encodedpostId = encodeURIComponent(post._id);
+             window.location.href = `quill.html?postId=${encodedpostId}`;
+    
+            
+            
+             
+           })
+     })
+  const user_profile = document.querySelector('.aa-profile-img');
+    user_profile.src = allPostByUser[0].author.profileimage;
+
+  // const user_name = document.querySelector('.user_name');
+  // user_name.innerText = allPostByUser[0].author.firstname;
+
+  const user_username = document.querySelector('.user_username');
+  user_username.innerText = allPostByUser[0].author.username;
+
+  const user_bio = document.querySelector('.user_bio')
+  user_bio.innerText = allPostByUser[0].author.profiledetail.bio;
+
+  
+}
+handleallPostByUser();
+
+
+
+const EDITPROFILE_API = BASE_URL+'/profile/updateprofile'
+
+const editProfile = document.querySelector('.edit_profile');
+
+editProfile.addEventListener('click', () => {
+  const form_div = document.querySelector('.form-div');
+  form_div.style.display = 'flex';
+
+  const form = document.querySelector('.edit-profile-form');
+
+  form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+    const username = document.querySelector('.aa-edit-username').value;
+    const bio = document.querySelector('.aa-edit-bio').value;
+    editProfile1(username,bio,token);
+    
+    form_div.style.display = 'none';
+    
+  });
+});
+
+async function editProfile1(username,bio,token){
+  authloading =true;
+  showloadingtoast(authloading);
+   try {
+    const response = await apiconnector("POST",EDITPROFILE_API,{username,bio},{
+            
+              "Content-Type":"multipart/form-data",
+              Authorization:`Bearer${token}`
+    });
+
+    console.log("chud gyi")
+
+    if(!response){
+      throw new error(' edit profile me error aaya hai');
+    }
+    console.log("edit profile ka response ",response);
+
+   } catch (error) {
+      console.log("error aa gya hai edit profile me",error);
+   }
+
+   authloading =false;
+   showloadingtoast(authloading);
+   }
+
+
+
+
+
+</script>
+</html>

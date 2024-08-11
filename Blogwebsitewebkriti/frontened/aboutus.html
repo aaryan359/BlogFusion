@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogfusion</title>
+    <link href="aboutus.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+</head>
+<body>
+<section>
+
+
+
+            <header class=" header-part">
+
+        <div class="header-logo">
+            <img class="logo-image" src="bloglogo.png" alt="Logo">
+            <p class="blogwebsitname">BlogFusion</p>
+        </div>
+
+    
+        <nav class="header-navbar">
+
+          <div>
+            <a class="navbar-parts1" href="index.html">Home</a>
+          </div>
+           
+           <div>
+            <a class="navbar-parts2" href="aboutus.html">About</a>
+
+           </div>
+            
+            <div>
+                <a  class="navbar-parts3" href="#">Blogs</a>
+            </div>
+            
+             <div>
+                <a class="navbar-parts4" href="quill.html">Publish Blog</a>
+             </div>
+            
+        </nav>
+         
+          
+        <div class="auth-buttons">
+                     
+                   <div class="search-section">
+                          <div class="searchbox-div"> 
+                                    <input id="searchbox" type="search"></input>
+                          </div>
+                    <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+
+                   </div>
+
+
+                <div class="login-signup-button">  
+
+                    <button id="loginbutton" class="loginbutton">Login</button>
+                    <button id="signupbutton" class="signupbutton">Sign up</button>
+
+                </div>
+             
+                 <div class="profile-section" >
+
+                          <button class="drop-down">
+
+                          
+                          <img  class="profile-image" alt="profileimage">
+
+
+                          <div>
+                            <i id="drop-down-icon" class="fa-solid fa-caret-down"></i>
+                          </div> 
+
+                          <div class="dashboard-logout">
+                                                      <a class="dashboard-button" >
+                                                        <i class="fa-solid fa-gauge"></i>
+                                                        Dashboard</a>
+                                                       <div class="logout-button">
+                                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                                        Logout</div>
+                           </div>
+
+                                        
+
+                        </button>
+                                
+                                                  
+                                              
+                                 
+                           
+                 </div>
+
+                    
+        </div>
+
+           
+            </header>
+
+            <div class="main-auth-section">
+                  <div class="main-body">
+                       <div class="main-auth" >
+                      
+  
+                          <div  id="login" style="width: 100%; flex-direction: column; justify-content: center; align-items: center;">
+
+                            <div id="hide-login-signup" >
+                                      
+                              <i id="hide-login-icon" style=" cursor: pointer;  font-size: 30px; font-weight: bolder; color: red;" class="fa-solid fa-xmark"></i>
+                                        
+      
+                            </div>
+                                 <div class="header-logo2">
+                                        <img class="logo-image2" src="bloglogo.png" alt="Logo">
+                                        <p class="blogwebsitname2">BlogFusion</p>
+                                 </div>
+             
+                                <div class="login-div-one">Welcome back to Bloggr</div> 
+
+                 
+
+                               <div class="login-div-two">
+                                               <form class=" login-form">
+                                          
+                                               <div class="login-form-div-one">
+                                                          <label class="form-label-one" for="email" >Email</label>
+                                                          <input class="loginemail" type="text" id="email" name="email" placeholder="Enter your email" required  >
+                                               </div>
+
+                                               <div class="login-form-div-two"> 
+                                                          <label  class="form-label-two" for="password" >Password</label>
+                                                          <input class="loginpassword" type="text" id="password" name="password" placeholder="Enter your password" required  >
+                                               </div>
+                                                <div class="login-form-div-three">
+                                                          <button type="button" class="forgot-button">Forget_password?</button>
+                                                          <button type="submit" id="signupbutton2" class="forgot-button">Sign up</button>
+                                                          
+                                                </div>
+
+                                                <button  class="login-form-button" type="submit">Sign In</button>
+                                             
+                                                </form>
+
+
+
+                                 
+                                  </div>
+
+                          </div>
+                 
+             
+                    
+                          <div id="signup" style="width: 100%; flex-direction: column; justify-content: center; align-items: center;" >
+
+               
+       
+                   <!-- <div class="header-logo2">
+                       <img class="logo-image2" src="bloglogo.png" alt="Logo">
+                       <p class="blogwebsitname2">BlogFusion</p>
+                   </div> -->
+                       <div id="hide-login-signup" >
+                                      
+                        <i id="hide-signup-icon" style=" cursor: pointer; font-size: 30px; font-weight: bold; color: red;" class="fa-solid fa-xmark"></i>
+                                  
+
+                       </div>
+                     <div class="signup-div-one">Be a Voice in Our Blogging Community: Register Now!</div> 
+ 
+                
+ 
+                     <div class="signup-div-two">
+                                    <form class="signup-form">   
+
+                                                    <div class="signup-firstname-lastname">
+
+                                                       <div class="signup-form-firstname">
+                                                           <label class="form-label-one"  for="firstname" >Firstname</label>
+                                                           <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required  >
+                                                       </div>
+
+                                                        <div class="signup-form-lastname"> 
+                                                           <label id="signuplastname" class="form-label-two" for="lastname" >Lastname</label>
+                                                           <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname" required  >
+                                                         </div>
+                                                    </div>
+
+                                                    <div class="signup-form-div-two">
+                                                       <label class="form-label-one" for="email" >Email</label>
+                                                       <input class="signupemail" type="text" id="email" name="email" placeholder="Enter your email" required  >
+                                                   </div>
+
+                                                   <div class="signup-form-div-three">
+                                                       <label class="form-label-one" for="mobilenumber" >Mobile number</label>
+                                                       <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Enter your mobile number" required  >
+                                                   </div>
+
+                                                   <div class="signup-password-confirm">
+                                                       <div class="signup-form-password">
+                                                           <label class="form-label-one" for="signpassword" >Password</label>
+                                                           <input type="text" id="signpassword" name="password" placeholder="Enter password" required >
+                                                       </div>
+
+                                                       <div class="signup-form-confirm">
+                                                           <label id="signupconfirmpassword" class="form-label-one" for="confirmpassword" > Confirm password</label>
+                                                           <input type="text" id="confirmpassword" name="confirmpassword" placeholder="Enter confirm password" required  >
+                                                       </div>
+                                                   </div>
+
+
+                                                     
+
+                                                
+                                                 
+                                                   <div class="signup-form-div-login" style=" display: flex; flex-direction: row; justify-content: end;">
+                                                 
+                                                    <button type="button" id="loginbutton2" class="forgot-button">Login</button>
+                                                    
+                                                   </div>
+                                                  <button   class="signup-form-button" type="submit">Create Account</button>
+                                               
+                                    </form>
+ 
+ 
+ 
+                                   
+                     </div>
+
+ 
+                          </div>
+
+
+                          <div class="otp-container" id="otp-container">
+
+                            <div id="hide-verify-email" >
+                                      
+                              <i id="hide-email-icon" style=" cursor: pointer; font-size: 30px; font-weight: bold; color: red;" class="fa-solid fa-xmark"></i>
+                                        
+      
+                             </div>
+                              <div class="verify-email-div">  Verify email </div>
+
+                              <div  class="verify-email-title"> Enter the 6-digit verification code that was sent to your email.
+
+                              </div>
+                            
+
+                            <div class="inputfield">
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                             
+                            </div>
+                                    <div style="width: 100%;">
+                                            <button   class="verify-email-button">Verify email</button>
+                                    </div>
+                          </div>
+
+                        </div>
+
+                 </div>   
+
+            </div>
+
+           <div class="aboutus">
+            <div class="div1">
+             <p class="p1">Welcome to BlogFusion, where we  share insights that inspire and connect <span id="future">our readers! </span></p>
+          <p class="p2">
+        At blogFusion, we share insights and stories that inspire and engage our community. Join us on our journey as we explore blogs and connect through shared experiences!.</p>
+
+       
+
+        
+        <div class="images">
+   
+        <img  class="img" src="img2.jpg" alt="Image 2">
+        <img class="img" src= "img1.jpg" alt="Image 21">
+        <img class="img" src="img3.jpg" alt="Image 3">
+              
+    </div>
+
+
+    <div class="div2">
+        <p class="p3">At BlogFusion, we believe in the power of storytelling to inspire and connect. Our mission is to turn every article into a <span id="aa"> journey</span> , <span id="aa">sparking</span> <span id="aa"> innovation</span> and  <span id="aa">curiosity </span> in our readers with each post.</p>
+    </div>
+
+    <div>
+        <div class="div3">
+            <div class="data">
+                <p class="heading1">Who We Are</p>
+                <p class="text">Established in 2024, BlogFusion is dedicated to creating unforgettable reading experiences. Our journey started with a simple idea: to make content extraordinary. Today, we continue to turn dreams into reality through our stories and insights.</p>
+            </div>
+
+            <div class="data">
+                <p class="heading2">Why Us</p>
+                <p class="text">What makes us unique is our unwavering commitment to excellence. We're not just a blog; we're your trusted source of inspiration and knowledge. Discover the reasons why readers like you choose us for their daily insights and adventures</p>
+            </div>
+
+        </div>
+
+        <div class="div4">
+            <div>
+                <p class="upper">5K</p>
+                <p class="lower">Active Users</p>
+            </div>
+
+            <div>
+                <p class="upper">15+</p>
+                <p class="lower">Categories</p>
+            </div>
+
+            <div>
+                <p class="upper">1M+</p>
+                <p class="lower">Posts</p>
+            </div>
+
+            <div>
+                <p class="upper">10+</p>
+                <p class="lower">Awards</p>
+            </div>
+
+        </div>
+
+    </div>
+            </div>
+           </div>
+
+           <div class="home-footer">
+            <div class="footer">
+
+      <div class="footer-row">
+
+        <div class="footer-col">
+          <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Info</h4>
+          <ul class="links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Compressions</a></li>
+            <li><a href="#">Customers</a></li>
+            <li><a href="#">Service</a></li>
+            <li><a href="#">Collection</a></li>
+            <li><a href="#">pricing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Explore</h4>
+          <ul class="links">
+            <li><a href="#">Free Designs</a></li>
+            <li><a href="#">Latest Designs</a></li>
+            <li><a href="#">Themes</a></li>
+            <li><a href="#">Popular Designs</a></li>
+            <li><a href="#">Art Skills</a></li>
+            <li><a href="#">New Uploads</a></li>
+            <li><a href="#">old uploads</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Legal</h4>
+          <ul class="links">
+            <li><a href="#">Customer Agreement</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">GDPR</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Media Kit</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;"> contact us</h4>
+          <p>
+            welcome to BlogFusion,
+            your number 1 source blogging 
+            with an emphasis on quality, reliability, and uniqueness
+
+          </p>
+          <p>
+            <i class="fa-solid fa-map-marker-alt"></i> Morena link Road ,Gwalior ,Madhya Pradesh
+            
+          </p>
+          
+          
+          <div>
+            <input class="mail" type="text" placeholder="Your email" required>
+            <input class="problem" type="text" placeholder="write your problem" required>
+            <button class="btn" type="submit">SEND</button>
+          </div>
+         
+          <div class="icons">
+            <i style="font-size:25px;" class="fa-brands fa-facebook-f"></i>
+            <i  style="font-size:25px;" class="fa-brands fa-twitter"></i>
+            <i style="font-size:25px;"  class="fa-brands fa-linkedin"></i>
+            <i style="font-size:25px;"  class="fa-brands fa-github"></i>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; BlogFusion.com | Designed by aaryan meena,vikas pal,anurag singh
+    </div>
+            </div>
+            </div>  
+
+
+
+
+
+
+</section>
+</body>
+
+<script src="useimage.js">
+              
+</script>
+
+
+<script src="searchbar.js">            
+  
+</script>
+
+<script src="dropdown.js">
+              
+
+</script>
+
+<script src="authloginsignup.js">
+ 
+           
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://kit.fontawesome.com/cb02f431d6.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>

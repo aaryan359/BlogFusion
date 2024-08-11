@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogFusion</title>
+    <link href="style.css" rel="stylesheet" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
+</head>
+<body>   
+          <!-- homepage    -->
+<div style="padding: 0; margin: 0;position: relative; ">
+                  
+           <header class=" header-part">
+
+        <div class="header-logo">
+            <img class="logo-image" src="bloglogo.png" alt="Logo">
+            <p class="blogwebsitname">BlogFusion</p>
+        </div>
+
+    
+        <nav class="header-navbar">
+
+          <div>
+            <a class="navbar-parts1" href="#">Home</a>
+          </div>
+           
+           <div>
+            <a class="navbar-parts2" href="aboutus.html">About</a>
+
+           </div>
+            
+            <div>
+                <a  class="navbar-parts3" href="#">Blogs</a>
+            </div>
+            
+             <div>
+                <a class="navbar-parts4" href="quill.html">Publish blog</a>
+             </div>
+            
+        </nav>
+         
+          
+        <div class="auth-buttons">
+                     
+                   <div class="search-section">
+                          <div class="searchbox-div"> 
+                                    <input id="searchbox" type="search"></input>
+                          </div>
+                    <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+
+                   </div>
+
+
+                <div class="login-signup-button">  
+
+                    <button id="loginbutton" class="loginbutton">Login</button>
+                    <button id="signupbutton" class="signupbutton">Sign up</button>
+
+                </div>
+             
+                 <div class="profile-section" >
+
+                          <button class="drop-down">
+
+                          
+                          <img  class="profile-image" alt="profileimage">
+
+                          <div>
+                            <i id="drop-down-icon" class="fa-solid fa-caret-down"></i>
+                          </div> 
+
+                          <div class="dashboard-logout">
+                                                      <a class="dashboard-button" >
+                                                        <i class="fa-solid fa-gauge"></i>
+                                                        Dashboard</a>
+                                                       <div class="logout-button">
+                                                        <i class="fa-solid fa-right-from-bracket"></i>
+                                                        Logout</div>
+                           </div>
+
+                                        
+
+                        </button>
+                                
+                                                                                     
+                                 
+                           
+                 </div>
+
+                    
+        </div>
+
+           
+           </header>
+
+                <div class="main-auth-section">
+                  <div class="main-body">
+                       <div class="main-auth" >
+                      
+  
+                          <div  id="login" style="width: 100%; flex-direction: column; justify-content: center; align-items: center;">
+
+                            <div id="hide-login-signup" >
+                                      
+                              <i id="hide-login-icon" style=" cursor: pointer;  font-size: 30px; font-weight: bolder; color: red;" class="fa-solid fa-xmark"></i>
+                                        
+      
+                            </div>
+                                 <div class="header-logo2">
+                                        <img class="logo-image2" src="bloglogo.png" alt="Logo">
+                                        <p class="blogwebsitname2">BlogFusion</p>
+                                 </div>
+             
+                                <div class="login-div-one">Welcome back to Bloggr</div> 
+
+                 
+
+                               <div class="login-div-two">
+                                               <form class=" login-form">
+                                          
+                                               <div class="login-form-div-one">
+                                                          <label class="form-label-one" for="email" >Email</label>
+                                                          <input class="loginemail" type="text" id="email" name="email" placeholder="Enter your email" required  >
+                                               </div>
+
+                                               <div class="login-form-div-two"> 
+                                                          <label  class="form-label-two" for="password" >Password</label>
+                                                          <input class="loginpassword" type="text" id="password" name="password" placeholder="Enter your password" required  >
+                                               </div>
+                                                <div class="login-form-div-three">
+                                                          <button type="button" class="forgot-button">Forget_password?</button>
+                                                          <button type="submit" id="signupbutton2" class="forgot-button">Sign up</button>
+                                                          
+                                                </div>
+
+                                                <button  class="login-form-button" type="submit">Sign In</button>
+                                             
+                                                </form>
+
+
+
+                                 
+                                  </div>
+
+                          </div>
+                 
+             
+                    
+                          <div id="signup" style="width: 100%; flex-direction: column; justify-content: center; align-items: center;" >
+
+               
+       
+                   <!-- <div class="header-logo2">
+                       <img class="logo-image2" src="bloglogo.png" alt="Logo">
+                       <p class="blogwebsitname2">BlogFusion</p>
+                   </div> -->
+                       <div id="hide-login-signup" >
+                                      
+                        <i id="hide-signup-icon" style=" cursor: pointer; font-size: 30px; font-weight: bold; color: red;" class="fa-solid fa-xmark"></i>
+                                  
+
+                       </div>
+                     <div class="signup-div-one">Be a Voice in Our Blogging Community: Register Now!</div> 
+ 
+                
+ 
+                     <div class="signup-div-two">
+                                    <form class="signup-form">   
+
+                                                    <div class="signup-firstname-lastname">
+
+                                                       <div class="signup-form-firstname">
+                                                           <label class="form-label-one"  for="firstname" >Firstname</label>
+                                                           <input type="text" id="firstname" name="firstname" placeholder="Enter your firstname" required  >
+                                                       </div>
+
+                                                        <div class="signup-form-lastname"> 
+                                                           <label id="signuplastname" class="form-label-two" for="lastname" >Lastname</label>
+                                                           <input type="text" id="lastname" name="lastname" placeholder="Enter your lastname" required  >
+                                                         </div>
+                                                    </div>
+
+                                                    <div class="signup-form-div-two">
+                                                       <label class="form-label-one" for="email" >Email</label>
+                                                       <input class="signupemail" type="text" id="email" name="email" placeholder="Enter your email" required  >
+                                                   </div>
+
+                                                   <div class="signup-form-div-three">
+                                                       <label class="form-label-one" for="mobilenumber" >Mobile number</label>
+                                                       <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Enter your mobile number" required  >
+                                                   </div>
+
+                                                   <div class="signup-password-confirm">
+                                                       <div class="signup-form-password">
+                                                           <label class="form-label-one" for="signpassword" >Password</label>
+                                                           <input type="text" id="signpassword" name="password" placeholder="Enter password" required >
+                                                       </div>
+
+                                                       <div class="signup-form-confirm">
+                                                           <label id="signupconfirmpassword" class="form-label-one" for="confirmpassword" > Confirm password</label>
+                                                           <input type="text" id="confirmpassword" name="confirmpassword" placeholder="Enter confirm password" required  >
+                                                       </div>
+                                                   </div>
+
+
+                                                     
+
+                                                
+                                                 
+                                                   <div class="signup-form-div-login" style=" display: flex; flex-direction: row; justify-content: end;">
+                                                 
+                                                    <button type="button" id="loginbutton2" class="forgot-button">Login</button>
+                                                    
+                                                   </div>
+                                                  <button   class="signup-form-button" type="submit">Create Account</button>
+                                               
+                                    </form>
+ 
+ 
+ 
+                                   
+                     </div>
+
+ 
+                          </div>
+
+
+                          <div class="otp-container" id="otp-container">
+
+                            <div id="hide-verify-email" >
+                                      
+                              <i id="hide-email-icon" style=" cursor: pointer; font-size: 30px; font-weight: bold; color: red;" class="fa-solid fa-xmark"></i>
+                                        
+      
+                             </div>
+                              <div class="verify-email-div">  Verify email </div>
+
+                              <div  class="verify-email-title"> Enter the 6-digit verification code that was sent to your email.
+
+                              </div>
+                            
+
+                            <div class="inputfield">
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                              <input type="number" maxlength="1" class="input" disabled />
+                             
+                            </div>
+                                    <div style="width: 100%;">
+                                            <button   class="verify-email-button">Verify email</button>
+                                    </div>
+                          </div>
+
+                        </div>
+
+                 </div>   
+
+                </div>
+
+           <div>
+
+
+            <div  class="header-section-two" >
+                
+                    <img class='section-two-image' height="300px" src="ourfinalimage.jpg" alt="">
+                
+                 <div class="section-two-trending">
+                                     
+                                    
+                                    <p class="section-two-trending-heading">Trending Blogs </p>
+                      
+                 </div>
+
+
+                <div class="header-blog-div-two">
+    
+    
+                    <div class="two-main-blog">
+    
+                        <div class="image-dic-section-two" style="width: 100%;">
+    
+                            <img id="tr1-img" class="section-main-blog-img" src="love.jpg" alt="loveimage">
+                        </div>
+    
+                       
+    
+                          
+                            <p id="tr1-p" class="love-loda" >Blockchain Beyond Bitcoin: Innovations in Distributed Ledger Technology</p> 
+                            <img id="tr1-pi" class="aryanmeena" src="aryanmeena.avif">              
+                    </div>
+    
+    
+                     <div class="three-main-blog">
+    
+    
+                 
+                             <div class="right-section-two-blogs">
+                                            
+                                                    <img id="tr2-img" class="right-section-two-image"  src="pencil.jpg">
+    
+                                                <div class="right-section-two-data">
+                                                               <p id="tr2-p" class="right-section-two-title">Blues must treat qualifiers like playoffs,allen says </p>
+                                                               <p id="tr2-pf" class="right-section-two-author">By mike Fink . Mar 25,2020</p>
+                                                </div>
+                             </div>
+    
+                             <div class="right-section-two-blogs">
+                                            
+                                <img  id="tr3-img" class="right-section-two-image"  src="copybook.jpg">
+    
+                            <div class="right-section-two-data">
+                                           <p id="tr3-p" class="right-section-two-title">Blues must treat qualifiers like playoffs,allen says </p>
+                                           <p id="tr3-pf" class="right-section-two-author">By mike Fink . Mar 25,2020</p>
+                            </div>
+                             </div>
+    
+    
+                             <div class="right-section-two-blogs">
+                                            
+                                <img id="tr4-img" class="right-section-two-image"  src="ima.avif">
+    
+                            <div class="right-section-two-data">
+                                           <p id="tr4-p" class="right-section-two-title">Blues must treat qualifiers like playoffs,allen says </p>
+                                           <p id="tr4-pf" class="right-section-two-author">By mike Fink . Mar 25,2020</p>
+                            </div>
+                             </div>
+    
+                             
+    
+    
+                        
+    
+                       
+                    </div>
+    
+    
+                </div>
+    
+    
+            </div>
+    
+    
+           </div>
+
+           <div class="home-section-three">
+
+
+            <div class="featured-blog-heading">Featured Bloggers</div>
+
+
+
+            <div class="featured-profiles">
+
+    
+                <div class="profile-one">
+
+
+
+                    <div class="profile-icon">
+                        <img  id="pf1-img" class="profile-image2" src="aryanmeena.avif" alt="Logo">
+                    </div>
+    
+                    <div class="profile-data">
+                     
+                            <p id="pf1-n" class="profile-author">Aaryan meena</p>
+                            <p class="profile-title">hello my name is aryan meena</p>
+                     
+                    </div>
+    
+                </div>
+
+                <div class="profile-one">
+                  <div class="profile-icon">
+                      <img id="pf2-img" class="profile-image2" src="anuragimage.avif" alt="Logo">
+                  </div>
+  
+                  <div class="profile-data">
+                      <div>
+                          <p id="pf2-n" class="profile-author">Anurag</p>
+                      </div>
+  
+                      <div>
+                          <p class="profile-title">hello my name is anurag</p>
+                      </div>
+                  </div>
+  
+                </div>
+
+
+               <div class="profile-one">
+                <div class="profile-icon">
+                    <img id="pf3-img" class="profile-image2" src="vikas2.avif" alt="Logo">
+                </div>
+
+                <div class="profile-data">
+                    <div>
+                        <p id="pf3-n" class="profile-author">vikas</p>
+                    </div>
+
+                    <div>
+                        <p class="profile-title">hello my name is vikas</p>
+                    </div>
+                </div>
+
+               </div>
+    
+    
+               
+    
+            </div>
+
+
+           </div>
+
+
+              
+
+           
+             <div class="home-section-four">
+
+               
+               <div class="two-main-blog2">
+    
+            <div class="image-dic-section-two2" style="width: 100%;">
+
+                <img id="f1-img" class="section-main-blog-img2" src="love.jpg" alt="loveimage">
+            </div>
+
+           
+
+              
+                <p id="f1-p" class="love-loda2" >Blockchain Beyond Bitcoin: Innovations in Distributed Ledger Technology</p> 
+                <img id="f1-pi" class="aryanmeena2" src="aryanmeena.avif">              
+               </div>
+
+               <div class="two-main-blog2">
+    
+                <div class="image-dic-section-two2" style="width: 100%;">
+    
+                    <img id="f2-img" class="section-main-blog-img2" src="ima.avif" alt="loveimage">
+                </div>
+    
+               
+    
+                  
+                    <p id="f2-p" class="love-loda2" >Blockchain Beyond Bitcoin: Innovations in Distributed Ledger Technology</p> 
+                    <img id="f2-pi" class="aryanmeena2" src="aryanmeena.avif">              
+                </div>
+        
+                
+              
+
+
+
+
+             </div>
+
+
+
+             <div class="home-section-five-start">
+
+ 
+     <div class="section-five-latest">
+                                     
+                                    
+        <p class="section-five-latest-heading">Latest Blogs </p>
+
+       </div>
+    <div class="header-section-five">
+    
+    
+        <div class="two-main-blog5">
+
+            <div  class="image-dic-section-two5" style="width: 100%;">
+
+                <img id="lat1-img" class="section-main-blog-img5" src="love.jpg" alt="loveimage">
+            </div>
+
+           
+
+              
+                <p id="lat1-p" class="love-loda5" >Blockchain Beyond Bitcoin: Innovations in Distributed Ledger Technology</p> 
+                <img id="lat1-pi" class="aryanmeena5" src="aryanmeena.avif">              
+        </div>
+
+
+         <div class="three-main-blog5">
+
+
+     
+                 <div class="right-section-two-blogs5">
+                                
+                                        <img id="lat2-img" class="right-section-two-image5"  src="pencil.jpg">
+
+                                    <div class="right-section-two-data5">
+                                                   <p id="lat2-p" class="right-section-two-title5">Blues must treat qualifiers like playoffs,allen says </p>
+                                                   <p id="lat2-pf" class="right-section-two-author5">By mike Fink . Mar 25,2020</p>
+                                    </div>
+                 </div>
+
+                 <div class="right-section-two-blogs5">
+                                
+                    <img id="lat3-img" class="right-section-two-image5"  src="copybook.jpg">
+
+                <div class="right-section-two-data5">
+                               <p  id="lat3-p" class="right-section-two-title5">Blues must treat qualifiers like playoffs,allen says </p>
+                               <p id="lat3-pf" class="right-section-two-author5">By mike Fink . Mar 25,2020</p>
+                </div>
+                 </div>
+
+
+                 <div class="right-section-two-blogs5">
+                                
+                    <img id="lat4-img" class="right-section-two-image5"  src="ima.avif">
+
+                <div class="right-section-two-data5">
+                               <p id="lat4-p" class="right-section-two-title5">Blues must treat qualifiers like playoffs,allen says </p>
+                               <p id="lat4-pf" class="right-section-two-author5">By mike Fink . Mar 25,2020</p>
+                </div>
+                 </div>
+
+                 
+
+
+            
+
+           
+        </div>
+
+
+    </div>
+   
+             </div>
+
+
+
+             <div class="home-section-six-start">
+
+  
+
+          <div class="home-section-six">
+
+
+       <div class="right-section-two-blogs6">
+                                
+              <img id="f3-img" class="right-section-two-image6"  src="pencil.jpg">
+
+                <div class="right-section-two-data6">
+                         <p id="f3-p" class="right-section-two-title6">Blues must treat qualifiers like playoffs,allen says </p>
+                          <p id="f3-pf" class="right-section-two-author6">By mike Fink . Mar 25,2020</p>
+                </div>
+        </div>
+
+        <div class="right-section-two-blogs6">
+                                
+            <img id="f4-img" class="right-section-two-image6"  src="love.jpg">
+
+              <div class="right-section-two-data6">
+                       <p id="f4-p" class="right-section-two-title6">Blues must treat qualifiers like playoffs,allen says </p>
+                        <p id="f4-pf" class="right-section-two-author6">By mike Fink . Mar 25,2020</p>
+       </div>
+        </div>
+
+      <div class="right-section-two-blogs6">
+                                
+        <img id="f5-img" class="right-section-two-image6"  src="ima.avif">
+
+          <div class="right-section-two-data6">
+                   <p id="f5-p" class="right-section-two-title6">Blues must treat qualifiers like playoffs,allen says </p>
+                    <p id="f5-pf" class="right-section-two-author6">By mike Fink . Mar 25,2020</p>
+   </div>
+       </div>
+   
+       
+           </div>
+
+             </div>
+
+
+
+            <div class="home-footer">
+                      <div class="footer">
+
+                <div class="footer-row">
+          
+                  <div class="footer-col">
+                    <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Info</h4>
+                    <ul class="links">
+                      <li><a href="#">About Us</a></li>
+                      <li><a href="#">Compressions</a></li>
+                      <li><a href="#">Customers</a></li>
+                      <li><a href="#">Service</a></li>
+                      <li><a href="#">Collection</a></li>
+                      <li><a href="#">pricing</a></li>
+                    </ul>
+                  </div>
+          
+                  <div class="footer-col">
+                    <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Explore</h4>
+                    <ul class="links">
+                      <li><a href="#">Free Designs</a></li>
+                      <li><a href="#">Latest Designs</a></li>
+                      <li><a href="#">Themes</a></li>
+                      <li><a href="#">Popular Designs</a></li>
+                      <li><a href="#">Art Skills</a></li>
+                      <li><a href="#">New Uploads</a></li>
+                      <li><a href="#">old uploads</a></li>
+                    </ul>
+                  </div>
+          
+                  <div class="footer-col">
+                    <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;">Legal</h4>
+                    <ul class="links">
+                      <li><a href="#">Customer Agreement</a></li>
+                      <li><a href="#">Privacy Policy</a></li>
+                      <li><a href="#">GDPR</a></li>
+                      <li><a href="#">Security</a></li>
+                      <li><a href="#">Testimonials</a></li>
+                      <li><a href="#">Media Kit</a></li>
+                    </ul>
+                  </div>
+          
+                  <div class="footer-col">
+                    <h4 style="font-family: sans-serif; font-weight: bold; font-size: 25px;"> contact us</h4>
+                    <p>
+                      welcome to BlogFusion,
+                      your number 1 source blogging 
+                      with an emphasis on quality, reliability, and uniqueness
+          
+                    </p>
+                    <p>
+                      <i class="fa-solid fa-map-marker-alt"></i> Morena link Road ,Gwalior ,Madhya Pradesh
+                      
+                    </p>
+                    
+                    
+                    <div>
+                      <input class="mail" type="text" placeholder="Your email" required>
+                      <input class="problem" type="text" placeholder="write your problem" required>
+                      <button class="btn" type="submit">SEND</button>
+                    </div>
+                   
+                    <div class="icons">
+                      <i style="font-size:25px;" class="fa-brands fa-facebook-f"></i>
+                      <i  style="font-size:25px;" class="fa-brands fa-twitter"></i>
+                      <i style="font-size:25px;"  class="fa-brands fa-linkedin"></i>
+                      <i style="font-size:25px;"  class="fa-brands fa-github"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="footer-bottom">
+                  &copy; BlogFusion.com | Designed by aaryan meena,vikas pal,anurag singh
+              </div>
+                      </div>
+            </div>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+    
+</body>
+
+<script src="useimage.js">
+              
+</script>
+
+
+<script src="searchbar.js">            
+  
+</script>
+
+<script src="dropdown.js">
+              
+
+</script>
+
+<script src="authloginsignup.js">
+ 
+           
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://kit.fontawesome.com/cb02f431d6.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</html>
